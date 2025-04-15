@@ -123,9 +123,44 @@ AWS Lambda allows you to run serverless functions in response to events, reducin
 
 1. **Create Kubernetes Deployment**: Use `deployment.yaml` for specifying how many pods you need and the container to run.
    Example `deployment.yaml`
+   ```
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: expense-tracker-deployment
+    spec:
+      replicas: 2
+      selector:
+        matchLabels:
+          app: expense-tracker
+      template:
+        metadata:
+          labels:
+            app: expense-tracker
+        spec:
+          containers:
+            - name: expense-tracker
+              image: ansuman25/expense-tracker:1.0
+              ports:
+                - containerPort: 8081
+   ```
 
-2. **Create Kubernetes Service**: Expose the app with a `service.yaml` to make it accessible via a LoadBalancer.
+3. **Create Kubernetes Service**: Expose the app with a `service.yaml` to make it accessible via a LoadBalancer.
    Example `service.yaml`
+   ```
+   apiVersion: v1
+    kind: Service
+    metadata:
+      name: expense-tracker-service
+    spec:
+      type: NodePort
+      selector:
+        app: expense-tracker
+      ports:
+        - port: 8081
+          targetPort: 8081
+          nodePort: 30081
+   ```
 
 ### AWS CI/CD Pipeline 🔄
 Set up **CI/CD** pipelines using AWS services for automating the entire process of code deployment.
@@ -136,6 +171,18 @@ Set up **CI/CD** pipelines using AWS services for automating the entire process 
 
 Example **buildspec.yml** for AWS CodeBuild:
 
+```
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Skipping Docker build, image is already in Docker Hub.
+
+artifacts:
+  files:
+    - '**/*'
+```
 ---
 
 ## Deployment 📦
@@ -147,6 +194,20 @@ Example **buildspec.yml** for AWS CodeBuild:
      kubectl apply -f deployment.yaml
      kubectl apply -f service.yaml
      ```
+
+**☁️ Deploy to Amazon S3 (Static Files or Lambda Package)**
+- Create an S3 bucket to store your deployment files or host a static website.
+- Use the following commands to upload your artifacts:
+```bash
+
+aws s3 mb s3://your-bucket-name
+aws s3 cp lambda-function.zip s3://your-bucket-name/lambda-function.zip
+aws lambda update-function-code \
+  --function-name your-lambda-name \
+  --s3-bucket your-bucket-name \
+  --s3-key lambda-function.zip
+```
+
 ## Contributing 🤝
 
 We welcome contributions! To contribute to this project:
@@ -157,17 +218,17 @@ We welcome contributions! To contribute to this project:
 
 ---
 
-## License 📄
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 Some Snapshots attached to showcase the final results of the Project:
 
+**CI-CD Pipeline**
 ![ci-cd pipeline](https://github.com/user-attachments/assets/9337fbd3-a412-45b3-9ab3-decc3d559160)
 
+**CodeBuild**
 ![CodeBuild](https://github.com/user-attachments/assets/f0cab628-5a71-4b7b-a20a-15c36eb452a9)
 
+**Docker Hub**
 ![Docker image in Docker Hub](https://github.com/user-attachments/assets/068f91a3-6b3d-43b8-ae0d-8c823739f4b7)
 
 

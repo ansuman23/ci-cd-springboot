@@ -9,7 +9,7 @@ Key Features:
 - **Kubernetes** for container orchestration
 - **CI/CD** automation with **AWS services** (CodePipeline, CodeBuild, CodeDeploy, EKS)
 - **Docker Hub** as the container registry
-- Full integration with **AWS Lambda** for serverless functionality (optional)
+- Additional - Implementation on **AWS Lambda** and **Terraform**
 
 ---
 
@@ -21,10 +21,9 @@ Key Features:
 - [Kubernetes Setup](#kubernetes-setup)
 - [AWS CodePipeline & CodeDeploy](#aws-codepipeline-codedeploy)
 - [Deployment](#deployment)
+- [AWS Lambda](#AWS-Lambda)
 - [Terraform](#terraform)
 - [Contributing](#contributing)
-- [License](#license)
-
 ---
 
 ## Project Setup ⚙️

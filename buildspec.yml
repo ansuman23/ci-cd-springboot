@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Skipping Docker build, image is already in Docker Hub.
+
+artifacts:
+  files:
+    - '**/*'

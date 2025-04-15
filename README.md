@@ -164,7 +164,6 @@ Set up **CI/CD** pipelines using AWS services for automating the entire process 
 3. **CodeDeploy**: Deploys the Docker container on **Amazon EKS**.
 
 Example **buildspec.yml** for AWS CodeBuild:
-
 ```
 version: 0.2
 
@@ -178,7 +177,6 @@ artifacts:
     - '**/*'
 ```
 ---
-
 ## Deployment 📦
 
 **Deploy to Amazon EKS**:
@@ -209,7 +207,6 @@ We welcome contributions! To contribute to this project:
 2. Create a new branch.
 3. Make your changes.
 4. Submit a pull request.
-
 ---
 ---
 Some Snapshots attached to showcase the final results of the Project:
@@ -227,7 +224,7 @@ Some Snapshots attached to showcase the final results of the Project:
 ![kubernetes dashboard](https://github.com/user-attachments/assets/4586bc57-fc8d-4989-b5b0-1254e52b6c9a)
 
 ## 🖋️ Author
-This project was created and maintained by [Ansuman Parija].
+This project was created and maintained by [Ansuman Parija](https://github.com/ansuman23).
 For any questions or contributions, feel free to reach out.
 
 

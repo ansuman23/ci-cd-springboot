@@ -200,6 +200,30 @@ aws lambda update-function-code \
   --s3-bucket your-bucket-name \
   --s3-key lambda-function.zip
 ```
+## AWS Lambda
+AWS Lambda is a serverless service that lets you run code without provisioning servers. You just write a function, upload it, and AWS handles the rest.
+
+✅ Steps to Create a Basic Lambda Function
+1. Go to AWS Console → Lambda
+2. Click "Create Function"
+3. Choose Author from scratch
+  Function name: myFirstLambda
+  Runtime: Python 3.x
+  Role: Choose “Create a new role with basic Lambda permissions”
+4. Write Your Function Code Use the inline editor with this sample code:
+
+``` python
+def lambda_handler(event, context):
+    return {
+        'statusCode': 200,
+        'body': 'Hello from Lambda!'
+    }
+````
+5. Deploy and Test
+  - Click Deploy
+  - Use the Test button to trigger the function
+  - You’ll see the output: "Hello from Lambda!"
+
 
 ## 🛠️ Terraform Deployment (for Web Scraper)
 This project uses Terraform to automate the deployment of the Python web scraper to an AWS EC2 instance.

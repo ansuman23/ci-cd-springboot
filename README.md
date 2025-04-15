@@ -1,10 +1,4 @@
-# ci-cd-springboot
-
-Got it! Below is the revised GitHub README documentation with a balance of high-level explanations and the necessary commands. It’s designed to make the structure clearer, focusing on Docker, Kubernetes, AWS Lambda, and CI/CD, while keeping the commands succinct.
-
----
-
-# Java Spring Boot Project with Docker, Kubernetes, and CI/CD on AWS 🚀
+# Docker, Kubernetes, CI/CD on AWS, Terraform and AWS DevOps 🚀
 
 ## Project Overview 📝
 This project demonstrates a **Java Spring Boot** application integrated with **Swagger API** documentation, containerized using **Docker**, deployed on **Kubernetes**, and automated with a complete **CI/CD pipeline** on **AWS** using **CodePipeline**, **CodeBuild**, **CodeDeploy**, and **Amazon EKS**.
@@ -217,8 +211,6 @@ We welcome contributions! To contribute to this project:
 4. Submit a pull request.
 
 ---
-
-
 ---
 Some Snapshots attached to showcase the final results of the Project:
 
@@ -230,6 +222,13 @@ Some Snapshots attached to showcase the final results of the Project:
 
 **Docker Hub**
 ![Docker image in Docker Hub](https://github.com/user-attachments/assets/068f91a3-6b3d-43b8-ae0d-8c823739f4b7)
+
+**Kubernetes Dashboard**
+![kubernetes dashboard](https://github.com/user-attachments/assets/4586bc57-fc8d-4989-b5b0-1254e52b6c9a)
+
+## 🖋️ Author
+This project was created and maintained by [Ansuman Parija].
+For any questions or contributions, feel free to reach out.
 
 
 

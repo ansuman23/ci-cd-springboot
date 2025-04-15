@@ -21,6 +21,7 @@ Key Features:
 - [Kubernetes Setup](#kubernetes-setup)
 - [AWS CodePipeline & CodeDeploy](#aws-codepipeline-codedeploy)
 - [Deployment](#deployment)
+- [Terraform](#terraform)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -199,6 +200,12 @@ aws lambda update-function-code \
   --s3-bucket your-bucket-name \
   --s3-key lambda-function.zip
 ```
+
+## 🛠️ Terraform Deployment (for Web Scraper)
+This project uses Terraform to automate the deployment of the Python web scraper to an AWS EC2 instance.
+
+✅ Purpose
+Instead of running the scraper locally, Terraform provisions a virtual machine in the cloud, installs Python and dependencies, and runs the script automatically.
 
 ## Contributing 🤝
 
